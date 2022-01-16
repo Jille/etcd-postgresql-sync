@@ -21,16 +21,19 @@ etcdctl user add postgres_syncer
 > Enter password hackme2
 etcdctl user grant-role postgres_syncer postgres_syncer
 
-ETCD_USER=postgres_syncer ETCD_PASSWORD=hackme2 DATABASE_DSN="user=etcd_syncer password=hackme host=127.0.0.1 port=5432 dbname=etcd" etcd-postgresql-sync
+ETCD_ENDPOINTS=https://127.0.0.1:2379 ETCD_USER=postgres_syncer ETCD_PASSWORD=hackme2 DATABASE_DSN="user=etcd_syncer password=hackme host=127.0.0.1 port=5432 dbname=etcd" etcd-postgresql-sync
 ```
 
 ## Parameters
 
 All configuration is passed in through environment variables. It takes these settings:
 
+- ETCD_ENDPOINTS is where to find your etcd cluster
 - ETCD_USER and ETCD_PASSWORD are used to connect to etcd. No authentication is used if you leave them unset/empty.
 - DATABASE_DSN specifies how to connect to PostgreSQL.
 - SYNCER_DEBUG can be set to "true" to make it log all queries sent to PostgreSQL.
+
+See the Setup section for example values.
 
 ## Future improvements
 

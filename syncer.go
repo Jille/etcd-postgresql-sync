@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/Jille/etcd-postgresql-sync/database"
@@ -24,11 +25,11 @@ func main() {
 	log.Printf("Connecting to etcd...")
 	var err error
 	c, err = clientv3.New(clientv3.Config{
-		Endpoints:        []string{"https://etcd_etcd_1:2379"},
+		Endpoints:        strings.Split(os.Getenv("ETCD_ENDPOINTS"), ","),
 		DialTimeout:      15 * time.Second,
 		AutoSyncInterval: 5 * time.Minute,
 		TLS: &tls.Config{
-			InsecureSkipVerify: true,
+			InsecureSkipVerify: true, // TODO
 		},
 		Username: os.Getenv("ETCD_USER"),
 		Password: os.Getenv("ETCD_PASSWORD"),
