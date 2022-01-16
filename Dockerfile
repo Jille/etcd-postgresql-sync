@@ -7,7 +7,7 @@ ENV CGO_ENABLED=0
 COPY go.mod go.sum /builder/
 RUN go mod download
 
-COPY * /builder/
+COPY . /builder/
 RUN go build -v -o /etcd-postgresql-sync
 
 FROM alpine
