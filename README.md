@@ -8,6 +8,7 @@ Note that this syncer is asynchronous, so you might lose a few transactions when
 
 ## Setup
 
+```
 postgres=# CREATE DATABASE etcd;
 postgres=# CREATE USER etcd_syncer PASSWORD 'hackme';
 postgres=# GRANT ALL PRIVILEGES ON DATABASE etcd TO etcd_syncer;
@@ -21,6 +22,7 @@ etcdctl user add postgres_syncer
 etcdctl user grant-role postgres_syncer postgres_syncer
 
 ETCD_USER=postgres_syncer ETCD_PASSWORD=hackme2 DATABASE_DSN="user=etcd_syncer password=hackme host=127.0.0.1 port=5432 dbname=etcd" etcd-postgresql-sync
+```
 
 ## Parameters
 
