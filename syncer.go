@@ -11,6 +11,7 @@ import (
 	"github.com/Jille/etcd-postgresql-sync/database"
 	"github.com/Jille/etcd-postgresql-sync/database/gendb"
 	clientv3 "go.etcd.io/etcd/client/v3"
+	"google.golang.org/grpc"
 )
 
 var (
@@ -25,6 +26,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to parse environment settings: %v", err)
 	}
+	cc.DialOptions = append(cc.DialOptions, grpc.WithBlock())
 	c, err = clientv3.New(cc)
 	if err != nil {
 		log.Fatalf("Failed to connect to etcd: %v", err)
