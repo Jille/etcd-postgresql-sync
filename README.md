@@ -29,9 +29,11 @@ ETCD_ENDPOINTS=https://127.0.0.1:2379 ETCD_USER=postgres_syncer ETCD_PASSWORD=ha
 All configuration is passed in through environment variables. It takes these settings:
 
 - ETCD_ENDPOINTS is where to find your etcd cluster
-- ETCD_USER and ETCD_PASSWORD are used to connect to etcd. No authentication is used if you leave them unset/empty.
+- ETCD_USERNAME and ETCD_PASSWORD are used to connect to etcd. No authentication is used if you leave them unset/empty.
 - DATABASE_DSN specifies how to connect to PostgreSQL.
 - SYNCER_DEBUG can be set to "true" to make it log all queries sent to PostgreSQL.
+
+See https://github.com/Jille/etcd-client-from-env for more parameters for connecting to etcd.
 
 See the Setup section for example values.
 

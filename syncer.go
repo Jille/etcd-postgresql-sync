@@ -2,14 +2,12 @@ package main
 
 import (
 	"context"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"log"
-	"os"
-	"strings"
 	"time"
 
+	clientconfig "github.com/Jille/etcd-client-from-env"
 	"github.com/Jille/etcd-postgresql-sync/database"
 	"github.com/Jille/etcd-postgresql-sync/database/gendb"
 	clientv3 "go.etcd.io/etcd/client/v3"
@@ -23,17 +21,11 @@ func main() {
 	ctx := context.Background()
 	database.Init()
 	log.Printf("Connecting to etcd...")
-	var err error
-	c, err = clientv3.New(clientv3.Config{
-		Endpoints:        strings.Split(os.Getenv("ETCD_ENDPOINTS"), ","),
-		DialTimeout:      15 * time.Second,
-		AutoSyncInterval: 5 * time.Minute,
-		TLS: &tls.Config{
-			InsecureSkipVerify: true, // TODO
-		},
-		Username: os.Getenv("ETCD_USER"),
-		Password: os.Getenv("ETCD_PASSWORD"),
-	})
+	cc, err := clientconfig.Get()
+	if err != nil {
+		log.Fatalf("Failed to parse environment settings: %v", err)
+	}
+	c, err = clientv3.New(cc)
 	if err != nil {
 		log.Fatalf("Failed to connect to etcd: %v", err)
 	}

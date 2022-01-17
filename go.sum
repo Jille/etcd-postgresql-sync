@@ -3,6 +3,8 @@ cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Jille/errchain v1.0.0 h1:S1YDbLdKAADkE1Rbj7A6d0QeoWZIvMzTBeoKjEkw9LA=
 github.com/Jille/errchain v1.0.0/go.mod h1:XaSP9ruaReMvv1BmcI52KV4NCmjVFTxjMGmKX9ixzG8=
+github.com/Jille/etcd-client-from-env v1.0.0 h1:SGlRIcsSiipCorSvfGBsSb/ayurGU8qkbhj6mujMeH8=
+github.com/Jille/etcd-client-from-env v1.0.0/go.mod h1:sH7W6dgNkkUHy90ZyVEKzev3VK9IHEC9WgS6dKRxT+M=
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=

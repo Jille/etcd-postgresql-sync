@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/Jille/errchain v1.0.0
+	github.com/Jille/etcd-client-from-env v1.0.0
 	github.com/jackc/pgconn v1.10.1
 	github.com/jackc/pgx/v4 v4.14.1
 	github.com/sirupsen/logrus v1.8.1
