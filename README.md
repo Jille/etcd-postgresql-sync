@@ -60,7 +60,7 @@ Add the following snippet to your docker-compose.yml to run it in Docker:
       ETCD_PASSWORD: hackme2
       ETCD_SERVER_CA: |
         -----BEGIN CERTIFICATE-----
-				[...]
+        [...]
         -----END CERTIFICATE-----
 ```
 
