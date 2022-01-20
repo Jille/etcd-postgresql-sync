@@ -45,6 +45,25 @@ See https://github.com/Jille/etcd-client-from-env for more parameters for connec
 
 See the Setup section for example values.
 
+## Docker-compose
+
+Add the following snippet to your docker-compose.yml to run it in Docker:
+
+```
+  postgresql-syncer:
+    image: "ghcr.io/jille/etcd-postgresql-sync"
+    restart: always
+    environment:
+      DATABASE_DSN: "user=etcd_syncer password=hackme host=127.0.0.1 port=5432 dbname=etcd"
+      ETCD_ENDPOINTS: https://etcd_etcd_1:2379
+      ETCD_USERNAME: postgres_syncer
+      ETCD_PASSWORD: hackme2
+      ETCD_SERVER_CA: |
+        -----BEGIN CERTIFICATE-----
+				[...]
+        -----END CERTIFICATE-----
+```
+
 ## Future improvements
 
 Currently, when the syncer starts it loads all data from etcd in memory and then starts pushing it to PostgreSQL. We could keep track of the revision we've synced up to and start watching again from that point, and only need to do a full copy when that revision has been compacted.
