@@ -3,6 +3,8 @@ cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Jille/errchain v1.0.0 h1:S1YDbLdKAADkE1Rbj7A6d0QeoWZIvMzTBeoKjEkw9LA=
 github.com/Jille/errchain v1.0.0/go.mod h1:XaSP9ruaReMvv1BmcI52KV4NCmjVFTxjMGmKX9ixzG8=
+github.com/Jille/etcd-auth-dump v0.1.0 h1:BBaqsO1d0yqU9sIoVK9vptzdcKAKRPSrh/DbOR4dadw=
+github.com/Jille/etcd-auth-dump v0.1.0/go.mod h1:5DlQnEq84g5JJLn7y8ik/nZBVQ8Em4MpBc343cOQQQw=
 github.com/Jille/etcd-client-from-env v1.0.0 h1:SGlRIcsSiipCorSvfGBsSb/ayurGU8qkbhj6mujMeH8=
 github.com/Jille/etcd-client-from-env v1.0.0/go.mod h1:sH7W6dgNkkUHy90ZyVEKzev3VK9IHEC9WgS6dKRxT+M=
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
@@ -11,6 +13,8 @@ github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuy
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
 github.com/alecthomas/units v0.0.0-20190717042225-c3de453c63f4/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
 github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d/go.mod h1:rBZYJk541a8SKzHPHnH3zbiI+7dagKZ0cgpgrD7Fyho=
+github.com/alessio/shellescape v1.4.1 h1:V7yhSDDn8LP4lc4jS8pFkt0zCnzVJlG5JXy9BVKJUX0=
+github.com/alessio/shellescape v1.4.1/go.mod h1:PZAiSCk0LJaZkiCSkPv8qIobYglO3FPpyFjDCtHLS30=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
 github.com/beorn7/perks v1.0.0/go.mod h1:KWe93zE9D1o94FZ5RNwFwVgaQK1VOXiVxmqh+CedLV8=

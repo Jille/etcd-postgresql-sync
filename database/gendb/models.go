@@ -4,6 +4,10 @@ package gendb
 
 import ()
 
+type EtcdAuth struct {
+	Commands string
+}
+
 type EtcdKv struct {
 	Key   string
 	Value string

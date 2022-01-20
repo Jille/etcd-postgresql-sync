@@ -12,3 +12,9 @@ DELETE FROM etcd.kv WHERE key = $1;
 
 -- name: DeleteAll :exec
 DELETE FROM etcd.kv;
+
+-- name: DeleteAuth :exec
+DELETE FROM etcd.auth;
+
+-- name: SetAuth :exec
+INSERT INTO etcd.auth (commands) VALUES ($1);

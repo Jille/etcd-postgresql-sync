@@ -35,6 +35,8 @@ func main() {
 	log.Printf("Connected.")
 	go c.Sync(ctx)
 
+	go authSyncLoop(ctx)
+
 	for {
 		if err := syncLoop(ctx); err != nil {
 			log.Print(err)

@@ -35,12 +35,30 @@ func (q *Queries) DeleteAll(ctx context.Context) error {
 	return err
 }
 
+const deleteAuth = `-- name: DeleteAuth :exec
+DELETE FROM etcd.auth
+`
+
+func (q *Queries) DeleteAuth(ctx context.Context) error {
+	_, err := q.db.Exec(ctx, deleteAuth)
+	return err
+}
+
 const deleteKey = `-- name: DeleteKey :exec
 DELETE FROM etcd.kv WHERE key = $1
 `
 
 func (q *Queries) DeleteKey(ctx context.Context, key string) error {
 	_, err := q.db.Exec(ctx, deleteKey, key)
+	return err
+}
+
+const setAuth = `-- name: SetAuth :exec
+INSERT INTO etcd.auth (commands) VALUES ($1)
+`
+
+func (q *Queries) SetAuth(ctx context.Context, commands string) error {
+	_, err := q.db.Exec(ctx, setAuth, commands)
 	return err
 }
 
