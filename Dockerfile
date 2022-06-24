@@ -14,4 +14,6 @@ FROM alpine
 
 COPY --from=builder /etcd-postgresql-sync /bin/etcd-postgresql-sync
 
+USER nobody
+
 ENTRYPOINT ["/bin/etcd-postgresql-sync"]
